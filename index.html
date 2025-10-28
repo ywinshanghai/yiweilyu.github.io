@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Yiwei Lyu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Icons & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Site Styles -->
+  <link rel="stylesheet" href="theme/css/base.css" type="text/css" />
+  <link rel="stylesheet" href="theme/css/page.css" type="text/css" />
+  <link rel="stylesheet" href="theme/academicons-1.9.1/css/academicons.min.css" type="text/css" />
+
+  <style>
+    /* Small cleanups and helpers */
+    #news .news-list li {
+  padding: 4px 10px;
+  line-height: 1.2;
+  font-size: 0.95em;
+}
+
+
+    .name {
+      font-size: 32px;
+      letter-spacing: 1px;
+      color: brown;
+      font-weight: 600;
+    }
+    .name .cap {
+      font-size: 44px;
+      color: brown;
+    }
+    .contact-table td:first-child {
+      width: 36px;
+      vertical-align: top;
+      text-align: center;
+    }
+    .announcement {
+      margin-top: 8px;
+      background: #fff7e6;
+      border: 1px solid #ffd591;
+      padding: 10px 12px;
+      border-radius: 8px;
+      color: #7a3e00;
+    }
+    .announcement i {
+      margin-right: 6px;
+      color: #d46b08;
+    }
+
+    /* Section headings */
+    h2 {
+      color: brown;
+      margin-top: 28px;
+      margin-bottom: 10px;
+    }
+
+    /* News section */
+    .news {
+      margin-top: 12px;
+      margin-bottom: 24px;
+    }
+    .news-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      background: #fafafa;
+      max-height: 240px;           /* scrollable container */
+      overflow-y: auto;
+    }
+    .news-list li {
+      padding: 10px 12px;
+      border-bottom: 1px dashed #e9e9e9;
+      display: none;               /* hidden by default; first 5 shown via JS */
+    }
+    .news-list li:last-child {
+      border-bottom: none;
+    }
+    .news-item-date {
+      color: #888;
+      font-size: 0.92em;
+      margin-right: 8px;
+      white-space: nowrap;
+    }
+    .news-controls {
+      margin-top: 8px;
+      display: flex;
+      gap: 8px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #fff;
+      color: #444;
+      cursor: pointer;
+      transition: all .15s ease;
+      font-size: 0.95em;
+    }
+    .btn:hover {
+      border-color: #bbb;
+      background: #f7f7f7;
+    }
+
+    /* Research interests */
+    .research-interests {
+      margin: 12px 0 24px;
+      padding: 12px;
+      border-left: 4px solid #d9d9d9;
+      background: #fcfcfc;
+      border-radius: 6px;
+    }
+
+    /* Icons row */
+    .icons table td {
+      text-align: center;
+      padding: 6px 16px;
+    }
+
+    /* Minor fixes for tables used as layout */
+    .topavatar table {
+      border-collapse: collapse;
+    }
+    .plain {
+      border-collapse: collapse;
+    }
+
+    /* Footer */
+    .bottom {
+      margin-top: 36px;
+      text-align: center;
+      color: #666;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header / Avatar / Contact -->
+  <div class="topavatar" role="banner">
+    <table>
+      <tr>
+        <td>
+          <img src="theme/images/yiweilyu.png" alt="Portrait of Yiwei Lyu">
+        </td>
+        <td>
+          <table class="plain contact-table">
+            <tr>
+              <td></td>
+              <td class="name" aria-label="Name">
+                <span class="cap">Y</span>IWEI <span class="cap">L</span>YU
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <a href="https://www.cmu.edu/" target="_blank" rel="noopener" aria-label="CMU Website">
+                  <i class="fa fa-university" aria-hidden="true"></i>
+                </a>
+              </td>
+              <td>
+                <a href="https://engineering.tamu.edu/cse/index.html" target="_blank" rel="noopener">
+                  Peterson Building (PETR) 317<br>
+                  Texas A&M University<br>
+                  College Station, TX, 77843
+                </a>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <i class="material-icons" aria-hidden="true">email</i>
+              </td>
+              <td>
+                <span>yiweilyu[at]tamu.edu &nbsp; <b>(she/her/hers)</b></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <a href="https://scholar.google.com.hk/citations?user=jGNvKs8AAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar">
+                  <i class="ai ai-google-scholar ai-2x" aria-hidden="true"></i>
+                </a>
+              </td>
+              <td>
+                <a href="https://scholar.google.com.hk/citations?user=jGNvKs8AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+              </td>
+            </tr>
+
+            <!-- Announcement (updated) -->
+            <tr>
+              <td>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+              </td>
+              <td>
+                <div class="announcement" role="note" aria-label="Recruiting announcement">
+                  <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                  <b>Interested in my research?</b>
+                    <p>
+                  I am actively looking for self-motivated students at all levels (BS/MS/PhD) with relevant backgrounds. If you are interested in working with me, feel free to reach out!
+                  </p>
+                </div>
+              </td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>About</h2>
+  <p>
+I am an Assistant Professor in the <u><a href="https://engineering.tamu.edu/electrical/index.html" target="_blank" rel="noopener">Department of Computer Science and Engineering (CSE)</a></u> at Texas A&M University. My research in robotics lies at the intersection of control theory, machine learning, and social science, with broad interests in safe control and verification, behavior planning, and human-robot interaction. Specifically, I develop principled methods to enable safe robot autonomy, supporting effective collaboration among robots and between robots and humans in uncertain, dynamic environments.
+
+</p>
+    <p>
+Before joining Texas A&M, I earned my Ph.D. in Electrical and Computer Engineering from Carnegie Mellon University in 2025, where I worked closely with Dr. John Dolan. I received my Bachelor’s degree in Electronic and Information Engineering from the Chinese University of Hong Kong, Shenzhen (CUHK-Shenzhen) in 2019.
+
+</p>
+
+  <p>
+My research has been recognized by the 2023–2024 Qualcomm Innovation Fellowship and an honorable mention for the 2024 Jane Street Graduate Research Fellowship. I was also named an IEEE/ACM Human-Robot Interaction (HRI) Pioneer (2024)  and selected as an MIT EECS Rising Star (2024). In addition, my work has received best paper awards and nominations at leading venues, including AAMAS, AAAI, IFAC CPHS, and workshops at ICRA, IROS, and IJCAI.
+
+
+
+
+  <div class="icons" aria-label="Institutions and timelines">
+    <table>
+      <tr>
+        <td>
+          <img src="theme/images/cmu.png" alt="Carnegie Mellon University">
+        </td>
+        <td>
+          <img src="theme/images/cuhksz.png" alt="Chinese University of Hong Kong, Shenzhen">
+        </td>
+      </tr>
+      <tr>
+        <td>2019 - 2025</td>
+        <td>2015 - 2019</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- NEWS (added before Publications) -->
+  <h2>News</h2>
+  <div class="news" id="news" aria-live="polite">
+    <ul class="news-list" id="newsList">
+      <!-- Keep newest items first (top). Only first 5 show by default. -->
+      <!-- Example items — replace with your actual news. -->
+      <li><span class="news-item-date">Sep 2025</span>Serving as an Associate Editor for ICRA 2026.</li>
+      <li><span class="news-item-date">Aug 2025</span>Serving as the Junior Co-chair for the Technical Committee on Multi-Robot Systems.</li>
+      <li><span class="news-item-date">Aug 2025</span>Welcome my first PhD student, Joonkyung Kim!</li>
+      <li><span class="news-item-date">Aug 2025</span>Started as an Assistant Professor at TAMU CSE. Gig 'Em, Aggies!</li>
+      <li><span class="news-item-date">Jul 2025</span>Successfully defended my PhD thesis. Finally, Dr. Lyu!</li>
+      <!-- Older examples -->
+      <li><span class="news-item-date">May 2025</span>Received the Best Poster Award at the 2025 CPS-IOT Week Ph.D. Forum!</li>
+
+<!--      <li><span class="news-item-date">Mar 2024</span>ACC 2024 paper camera-ready submitted.</li>-->
+<!--      <li><span class="news-item-date">Jan 2024</span>Invited to MIT EECS Rising Stars 2024.</li>-->
+    </ul>
+    <div class="news-controls">
+      <button class="btn" id="toggleNews"><i class="fa fa-list-ul" aria-hidden="true"></i><span>Show all</span></button>
+      <button class="btn" id="scrollTopNews" title="Scroll to top"><i class="fa fa-arrow-up" aria-hidden="true"></i>Top</button>
+    </div>
+  </div>
+
+<!--  &lt;!&ndash; RESEARCH INTERESTS (after News) &ndash;&gt;-->
+<!--  <h2>Research Interests</h2>-->
+<!--  <div class="research-interests" id="research-interests">-->
+<!--    &lt;!&ndash; Replace the paragraph below with your own research interests paragraph &ndash;&gt;-->
+<!--    <p><i>My research in robotics lies at the intersection of control theory, machine learning, and social science, with broad interests in safe control and verification, behavior planning, and human-robot interaction. Specifically, I develop principled methods to enable safe robot autonomy, supporting effective collaboration among robots and between robots and humans in uncertain, dynamic environments.</i></p>-->
+<!--  </div>-->
+
+  <h2>Teaching</h2>
+<div class="teaching" id="teaching">
+  <ul class="teaching-list">
+    <li><b>Fall 2025:</b>  <i>CSCE 689: Special Topic in Multi-Robot System</i></li>
+  </ul>
+</div>
+
+
+
+  <!-- Publications (unchanged content) -->
+  <h2>Selected Publications</h2>
+<!--  <p class="publ">Peer-Reviewed Full-Length Papers</p>-->
+  * denotes student mentee co-author
+  <p>
+    <ol reversed>
+      <li>
+        Yupeng Yang, <b>Yiwei Lyu</b>, Yanze Zhang, Ian Gao, Wenhao Luo, <strong>"Integrating Online Learning and Connectivity Maintenance for Communication-Aware Multi-Robot Coordination."</strong> <i>International Conference on Intelligent Robots and Systems (IROS), 2024</i>
+        <a href="https://arxiv.org/abs/2410.05798" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a>
+      </li>
+      <li>
+        Yanze Zhang, <b>Yiwei Lyu</b>, Sude E. Demir, Xingyu Zhou, Yupeng Yang, Junmin Wang, and Wenhao Luo, <strong>"Courteous Driving using CBF-inspired and Ego-perceived Risk Maps."</strong> <i>International Conference on Intelligent Transportation Systems, (ITSC), 2024</i>
+        <a href="https://arxiv.org/abs/2408.12822" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a>
+      </li>
+      <li>
+        Yupeng Yang, <b>Yiwei Lyu</b>, Yanze Zhang, Sha Yi, Wenhao Luo, <strong>"Decentralized Multi-Robot Line-of-Sight Connectivity Maintenance under Uncertainty."</strong> <i>Robotics: Science and Systems, (RSS), 2024</i>
+        <a href="https://arxiv.org/abs/2406.12802" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a>
+      </li>
+      <li>
+        Nate Ludlow*, <b>Yiwei Lyu</b>, John Dolan, <strong>"Hierarchical Learned Risk-Aware Planning Framework for Human Driving Modeling."</strong> <i>International Conference on Robotics and Automation (ICRA), 2024</i>
+        <a href="https://arxiv.org/abs/2405.06578" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a>
+      </li>
+      <li>
+        <b>Yiwei Lyu</b>, Wenhao Luo, John Dolan, <strong>"Risk-based Socially-Compliant Behavior Planning for Autonomous Driving."</strong> <i>American Control Conference (ACC), 2024</i>
+        <a href="https://ieeexplore.ieee.org/abstract/document/10644409" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a>
+        <b style="color:red;">(IROS 2024 ERS Workshop Best Paper Award)</b>
+      </li>
+      <li>
+        <b>Yiwei Lyu</b>, Wenhao Luo, John Dolan, <strong>"Risk-aware Safe Control for Decentralized Multi-agent Systems via Dynamic Responsibility Allocation."</strong> <i>International Conference on Intelligent Robots and Systems (IROS), 2023</i>
+        <a href="https://arxiv.org/abs/2305.13467" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a>
+        <b style="color:red;">(ICRA 2023 TAS Workshop Best Paper Award)</b>
+      </li>
+      <li>
+        Shuangge Wang*, <b>Yiwei Lyu</b>, John M. Dolan, <strong>"Active Probing and Influencing Human Behaviors Via Autonomous Agents."</strong> <i>IEEE International Conference on Robotics and Automation (ICRA), 2023</i>
+        <a href="https://arxiv.org/abs/2304.11817" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a>
+      </li>
+      <li>
+        Soumith Udatha*, <b>Yiwei Lyu</b>, John M. Dolan, <strong>"Reinforcement Learning with Probabilistically Safe Control Barrier Functions for Ramp Merging."</strong> <i>IEEE International Conference on Robotics and Automation (ICRA), 2023</i>
+        <a href="https://arxiv.org/abs/2212.00618" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a>
+      </li>
+      <li>
+        Yupeng Yang, <b>Yiwei Lyu</b>, Wenhao Luo, <strong>"Minimally Constrained Multi-Robot Coordination with Line-of-sight Connectivity Maintenance."</strong> <i>IEEE International Conference on Robotics and Automation (ICRA), 2023</i>
+        <a href="https://arxiv.org/abs/2303.04271" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a>
+      </li>
+      <li>
+        <b>Yiwei Lyu</b>, John Dolan, Wenhao Luo, <strong>"Decentralized Safe Navigation for Multi-agent Systems via Risk-aware Weighted Buffered Voronoi Cells."</strong> <i>The 22nd International Conference on Autonomous Agents and Multiagent Systems (AAMAS), 2023</i>
+        <a href="https://dl.acm.org/doi/abs/10.5555/3545946.3598800" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a>
+        <b style="color:red;">(Pragnesh Jay Modi Best Student Paper Award Runner-Up)</b>
+      </li>
+      <li>
+        Wenli Xiao*，<b>Yiwei Lyu</b>, John Dolan, <strong>"Model-based Dynamic Shielding for Safe and Efficient Multi-agent Reinforcement Learning."</strong> <i>The 22nd International Conference on Autonomous Agents and Multiagent Systems (AAMAS), 2023</i>
+        <a href="https://arxiv.org/abs/2304.06281" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a>
+      </li>
+      <li>
+        <b>Yiwei Lyu</b>, John M. Dolan, Wenhao Luo, <strong>"CBF-Inspired Weighted Buffered Voronoi Cells for Distributed Multi-Agent Collision Avoidance."</strong> <i>American Control Conference (ACC), 2023</i>
+        <a href="https://ieeexplore.ieee.org/abstract/document/10156080/?casa_token=v4NF8tESiD4AAAAA:1eQGoKAlbFV1dOvq6zxwir0JCP-l0GFRx-EGO85umfBeSle_61f2MaPITZkYd93wWA_FGpfX" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a>
+      </li>
+      <li>
+        Jaskaran Grover, <b>Yiwei Lyu</b>, Wenhao Luo, Changliu Liu, John Dolan, and Katia Sycara, <strong>"Pedestrian Dynamics Inference Using Control Barrier Functions and Mixed-Integer Quadratic Programming."</strong> <i>The 4th IFAC Workshop on Cyber-Physical Human Systems (IFAC CPHS), 2022</i>
+        <a href="https://www.sciencedirect.com/science/article/pii/S2405896323001283" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a> <b style="color:red;">(Best Student Paper Finalist)</b>
+      </li>
+      <li>
+        <b>Yiwei Lyu</b>, Wenhao Luo, and John M. Dolan, <strong>"Responsibility-associated Multi-agent Collision Avoidance with Social Preferences."</strong> <i>The 25th IEEE International Conference on Intelligent Transportation Systems (ITSC), 2022</i>
+        <a href="https://arxiv.org/pdf/2206.09030" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a>
+      </li>
+      <li>
+        Spencer Van Koevering*, <b>Yiwei Lyu</b>, Wenhao Luo, and John M. Dolan, <strong>"Provable Probabilistic Safety and Feasibility-Assured Control for Autonomous Vehicles using Exponential Control Barrier Functions."</strong> <i>IEEE Intelligent Vehicles Symposium (IV), 2022</i>
+        <a href="https://arxiv.org/pdf/2205.03744" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a> <b style="color:red;">(~10% Oral Presentation)</b>
+      </li>
+      <li>
+        <b>Yiwei Lyu</b>, Wenhao Luo, and John M. Dolan, <strong>"Adaptive Safe Merging Control for Heterogeneous Autonomous Vehicles Using Parametric Control Barrier Functions."</strong> <i>IEEE Intelligent Vehicles Symposium (IV), 2022</i>
+        <a href="https://arxiv.org/pdf/2202.09936.pdf" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a>
+      </li>
+      <li>
+        <b>Yiwei Lyu</b>, Wenhao Luo, and John M. Dolan, <strong>"Probabilistic Safety-Assured Adaptive Merging Control for Autonomous Vehicles."</strong> <i>IEEE International Conference on Robotics and Automation (ICRA), 2021</i>
+        <a href="https://arxiv.org/pdf/2104.14159.pdf" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a> <b style="color:red;">(IJCAI 2021 AI4AD Workshop Best Paper Runner-Up)</b>
+      </li>
+      <li>
+        <b>Yiwei Lyu</b>, Chiyu Dong, and John M. Dolan, <strong>"FG-GMM-based Interactive Behavior Estimation for Autonomous Driving Vehicles in Ramp Merging Control."</strong> <i>IEEE International Conference on Robotics and Automation (ICRA), 2020 </i>
+        <a href="https://www.ri.cmu.edu/wp-content/uploads/2020/04/final_submission.pdf" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a>
+      </li>
+      <li>
+        Ziran Zhang, <b>Yiwei Lyu</b>, Fahad Raza, and Huihuan Qian, <strong>"Design and Control of A Hybrid Sailboat for Enhanced Tacking Maneuver."</strong> <i>13th World Congress on Intelligent Control and Automation (WCICA), 2018 </i>
+        <a href="https://arxiv.org/ftp/arxiv/papers/1811/1811.11886.pdf" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a> <b style="color:red;">(Best Student Paper Finalist)</b>
+      </li>
+    </ol>
+<!--  </p>-->
+
+<!--  <p class="publ">Peer-Reviewed Short Papers</p>-->
+<!--  <ol reversed>-->
+<!--    <li>-->
+<!--      <b>Yiwei Lyu</b>, <strong>"Interactive Control and Decision-Making for Multi-Robots Systems."</strong> <i>The 23rd International Conference on Autonomous Agents and Multiagent Systems (AAMAS Doctoral Consortium), 2024</i>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--      <b>Yiwei Lyu</b>, <strong>"Reliable Interactive Autonomy for Multi-Agent Systems."</strong> <i> ACM/IEEE International Conference on Human-Robot Interaction (HRI Pioneer), 2024</i>-->
+<!--      <a href="https://dl.acm.org/doi/abs/10.1145/3610978.3638372" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--      Yupeng Yang, <b>Yiwei Lyu</b>, Wenhao Luo, <strong>"Minimally Constraining  Line-of-Sight Connectivity Maintenance for Collision-free Multi-Robot Networks under Uncertainty."</strong> <i>The 22nd International Conference on Autonomous Agents and Multiagent Systems (AAMAS Extended Abstract), 2023</i>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--      <b>Yiwei Lyu</b>, Wenhao Luo, and John M. Dolan, <strong>"Risk-aware Decentralized Safe Control via Dynamic Responsibility Allocation."</strong> <i>Thirty-Seventh AAAI Conference on Artificial Intelligence  (AAAI Student Abstract), 2023</i>-->
+<!--      <a href="https://ojs.aaai.org/index.php/AAAI/article/view/26998" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a><b style="color:red;">(Student Abstract Award Finalist)</b>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--      <b>Yiwei Lyu</b>, <strong>"Safe Interactive Autonomy for Multi-agent Systems."</strong> <i>Thirty-Seventh AAAI Conference on Artificial Intelligence (AAAI Doctoral Consortium), 2023</i>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--      <b>Yiwei Lyu</b>, Wenhao Luo, and John M. Dolan, <strong>"Adaptive Safe Behavior Generation for Heterogeneous Autonomous Vehicles Using Parametric-Control Barrier Functions."</strong> <i>Thirty-Sixth AAAI Conference on Artificial Intelligence  (AAAI Student Abstract), 2022</i>-->
+<!--      <a href="https://aaai-2022.virtualchair.net/poster_sa427" target="_blank" rel="noopener">[ <i class='fa fa-file-pdf-o'></i> PDF ]</a>-->
+<!--      <a href="https://aaai-2022.virtualchair.net/poster_sa427" target="_blank" rel="noopener">[ <i class='fa fa-file-video-o'></i> video ]</a> <b style="color:red;">(Student Abstract Award Finalist)</b>-->
+<!--    </li>-->
+<!--  </ol>-->
+
+  <h2>Selected Honors and Awards</h2>
+  <div class="honors">
+    <ul>
+      <li><span class="title">Best Paper Award, IROS Robot Ethics (ERS) Workshop</span><span class="year">2024</span></li>
+      <li><span class="title">EECS Rising Star, MIT</span><span class="year">2024</span></li>
+      <li><span class="title">Human-Robot Interaction Pioneer, IEEE/ACM</span><span class="year">2024</span></li>
+<!--      <li><span class="title">Jane Street Graduate Research Fellowship Honoral Mention, Jane Street</span><span class="year">2024</span></li>-->
+      <li><span class="title">Qualcomm Innovation Fellowship, Qualcomm</span><span class="year">2023</span></li>
+      <li><span class="title">Best Paper Award, ICRA Trustworthy Autonomous Systems (TAS) Workshop</span><span class="year">2023</span></li>
+<!--      <li><span class="title">ICRA Student Scholarship, ICRA</span><span class="year">2023</span></li>-->
+      <li><span class="title">Pragnesh Jay Modi Best Student Paper Award Runner-Up, AAMAS</span><span class="year">2023</span></li>
+<!--      <li><span class="title">AAMAS Student Scholarship, AAMAS</span><span class="year">2023,2024</span></li>-->
+<!--      <li><span class="title">AAAI Student Scholarship, AAAI</span><span class="year">2023</span></li>-->
+<!--      <li><span class="title">AAAI/SIGAI-23 Doctoral Consoritum, AAAI</span><span class="year">2023</span></li>-->
+<!--      <li><span class="title">CPHS Fellow, IFAC CPHS</span><span class="year">2022</span></li>-->
+      <li><span class="title">Best Student Paper Finalist, IFAC CPHS</span><span class="year">2022</span></li>
+<!--      <li><span class="title">NSF WAFR Travel Award, Workshop on the Algorithmic Foundations of Robotics</span><span class="year">2022</span></li>-->
+<!--      <li><span class="title">GSA conference funding, CMU</span><span class="year">2020, 2022</span></li>-->
+<!--      <li><span class="title"><a href="https://sites.google.com/andrew.cmu.edu/inclusion-2021/home?authuser=0" target="_blank" rel="noopener">RSS Inclusion Fellowship, Robotics: Science and Systems (RSS)</a></span><span class="year">2021</span></li>-->
+      <li><span class="title">Best Paper Runner-Up, IJCAI AI for Autonomous Driving (AI4AD) Workshop</span><span class="year">2021</span></li>
+<!--      <li><span class="title">ECE Exemplary Qual Exam Performance Distinction, CMU</span><span class="year">2021</span></li>-->
+<!--      <li><span class="title">Outstanding Performance and Leadership Presidential Award, CUHK-Shenzhen</span><span class="year">2019</span></li>-->
+      <li><span class="title">Best Student Paper Finalist, WCICA</span><span class="year">2018</span></li>
+<!--      <li><span class="title">Robotics Institute Summer Scholar, CMU</span><span class="year">2018</span></li>-->
+<!--      <li><span class="title">Award for Entrepreneur - Personal Innovative Spirit of the Year 2016, CUHK-Shenzhen</span><span class="year">2016</span></li>-->
+    </ul>
+  </div>
+
+</div> <!-- /container -->
+
+<div class="bottom">
+  <hr>
+  <p>Yiwei Lyu - Texas A&M University &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Last Update: October 2025</p>
+  <p>Template from <a href="https://anqili.github.io/" target="_blank" rel="noopener">https://anqili.github.io/</a></p>
+</div>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9MK8TZX39T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9MK8TZX39T');
+</script>
+
+<!-- News behavior: show only 5 items by default; toggle to show all -->
+<script>
+  (function () {
+    const list = document.getElementById('newsList');
+    if (!list) return;
+    const items = Array.from(list.querySelectorAll('li'));
+    const maxVisible = 5;
+
+    // Initial state: show first 5
+    items.forEach((li, idx) => li.style.display = idx < maxVisible ? 'block' : 'none');
+
+    const toggleBtn = document.getElementById('toggleNews');
+    const topBtn = document.getElementById('scrollTopNews');
+    let expanded = false;
+
+    function setExpanded(next) {
+      expanded = next;
+      items.forEach(li => li.style.display = next ? 'block' : 'none');
+      // Always keep first 5 visible when collapsed
+      if (!next) items.forEach((li, idx) => li.style.display = idx < maxVisible ? 'block' : 'none');
+      toggleBtn.querySelector('span').textContent = next ? 'Show less' : 'Show all';
+      list.setAttribute('aria-expanded', String(next));
+    }
+
+    toggleBtn?.addEventListener('click', () => setExpanded(!expanded));
+    topBtn?.addEventListener('click', () => list.scrollTo({ top: 0, behavior: 'smooth' }));
+  })();
+</script>
+
+</body>
+</html>
